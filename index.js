@@ -19,7 +19,15 @@ Do the following:
 
    HINT: no function required
 */
-
+let votingAge = 18; {
+  if (votingAge >= 18) {
+   console.log("You can vote!")
+ }
+   if (votingAge < 18) {
+   console.log('You can not vote')
+ }
+  console.log(votingAge)
+ }
 
 
 /*
@@ -60,10 +68,12 @@ Do the following:
    2. Receive the parameters: a and b
    3. Multiply a and b and return the answer
 */
-
+let num1 = 2
+let num2 = 3
 function multiply(num1, num2){
   return num1 * num2;
 }
+console.log(num1 * num2);
 
 
 
@@ -156,7 +166,7 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-function game(user, computer){
+function game(){
   /*add your code here*/
 }
 
@@ -246,9 +256,6 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
-}
 
 
 
