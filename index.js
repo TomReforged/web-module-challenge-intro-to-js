@@ -21,13 +21,13 @@ Do the following:
 */
 let votingAge = 18; {
   if (votingAge >= 18) {
-   console.log("You can vote!")
- }
-   if (votingAge < 18) {
-   console.log('You can not vote')
- }
+    console.log("You can vote!")
+  }
+  if (votingAge < 18) {
+    console.log('You can not vote')
+  }
   console.log(votingAge)
- }
+}
 
 
 /*
@@ -70,7 +70,7 @@ Do the following:
 */
 let num1 = 2
 let num2 = 3
-function multiply(num1, num2){
+function multiply(num1, num2) {
   return num1 * num2;
 }
 console.log(num1 * num2);
@@ -87,10 +87,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age) {
+  let dogAge = 7 * age
+  return (dogAge);
 }
-
+console.log(dogYears(10))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -137,11 +138,35 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
       
         Notice the expected and received, expected is what the test is looking for, and received is what was actually returned from this function. You can also see it's passing in two values, the number 4 and the number 1. 
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
-*/  
+*/
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age) {
+  let foodAmount;
+  if (age >= 1) {
+    if (weight <= 5) {
+      return weight * .05
+    } else if (weight <= 10) {
+      return weight * .04
+    } else if (weight <= 15) {
+      return weight * .03
+    } else {
+      foodAmount = weight * .02
+      // console.log("This is my line", foodAmount)
+    }
+  }
+  if (age < 1) {
+    if (age <= .333) {
+      foodAmount = weight * .10
+    } else if (age <= .583) {
+      foodAmount = weight * .05
+    } else {
+      foodAmount = weight * .04
+    }
+  }
+
+  return foodAmount;
 }
+console.log(hungryDog(16, 1))
 
 
 
@@ -166,10 +191,31 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-function game(){
-  /*add your code here*/
-}
+let computerChoice = Math.random();
+if (computerChoice <= 0.34) {
+  computerChoice = "rock"
+} else if (computerChoice <= .67) {
+  computerChoice = "paper"
+} else if (computerChoice <= 1) {
+  computerChoice = "scissors"
 
+}
+function game(userChoice, computerChoice) {
+
+
+  console.log(computerChoice);
+  if (userChoice === computerChoice) {
+    return "it's a tie";
+  } else if (userChoice === "rock" && computerChoice === "scissors" || userChoice === "paper" && computerChoice === "rock" || userChoice === "scissors" && computerChoice === "paper") {
+    return "you win!";
+  } else {
+    return "you lose!"
+  }
+
+
+
+}
+console.log(game("rock"))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -183,9 +229,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kms) {
+  let kmToMiles = kms * .621371;
+  return kmToMiles
 }
+console.log(miles(5))
 
 
 
@@ -197,10 +245,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm) {
+  let ftToCm = cm / 30.48;
+  return ftToCm
 }
-
+console.log(feet(3))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -217,9 +266,21 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(bottles) {
+  return (bottles + " bottles of soda on the wall, " + bottles + " bottles of soda, take one down pass it around " + (bottles - 1) + " bottles of soda on the wall")
 }
+
+// use a loop to repeat function call while bottles >= 1
+// 
+let bottles = 20;
+
+for(let i = bottles; i >= 1; i--){
+ console.log(annoyingSong(i))
+}
+
+annoyingSong(20);
+
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -237,43 +298,55 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(letter) {
+  let score = letter
+
+  if (score >= 90) {
+    return "you got an A"
+  } else if (score >= 80 && score <= 89) {
+    return "you got a B"
+  } else if (score >= 70 && score <= 79) {
+    return "you got a C"
+  } else if (score >= 60 && score <= 69) {
+    return "you got a D"
+  } else {
+    return "you got an F"
+  }
 }
+console.log(grade(74));
+
+
+  /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
+
+  //Vowel Counter - How many vowels are there?
+  /*
+  Using the vowelCounter function below do the following:
+  1. Receive a string as a parameter
+  2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
+  
+  HINT - you may need to study tomorrow's content on arrays 
+  HINT - try looking up the .includes() method
+  */
 
 
 
-/*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
-
-//Vowel Counter - How many vowels are there?
-/*
-Using the vowelCounter function below do the following:
-1. Receive a string as a parameter
-2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
-
-HINT - you may need to study tomorrow's content on arrays 
-HINT - try looking up the .includes() method
-*/
 
 
-
-
-
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-  console.log('its working');
-  return 'bar';
-}
-foo();
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-module.exports = {
-  foo,
-  multiply,
-  dogYears,
-  hungryDog,
-  game,
-  miles,
-  feet,
-  annoyingSong,
-  grade
-}
+  /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+  function foo() {
+    console.log('its working');
+    return 'bar';
+  }
+  foo();
+  /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+  module.exports = {
+    foo,
+    multiply,
+    dogYears,
+    hungryDog,
+    game,
+    miles,
+    feet,
+    annoyingSong,
+    grade
+  }
